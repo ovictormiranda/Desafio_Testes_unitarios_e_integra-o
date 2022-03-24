@@ -52,10 +52,10 @@ describe("Create a Statement", () => {
     }
   });
 
-  it("Shouldn't be able to create a statement with be an user", async () => {
+  it("Shouldn't be able to create a statement of an Unknown User", async () => {
     expect(async () => {
       await createStatementUseCase.execute({
-        user_id: "User without register",
+        user_id: "Unknown User",
         type: OperationType.DEPOSIT,
         amount: 300,
         description: "Deposit"
@@ -63,7 +63,7 @@ describe("Create a Statement", () => {
     }).rejects.toBeInstanceOf(AppError)
   });
 
-  it("Shouldn't be able to withdraw plus money then exist in account", async () => {
+  it("Shouldn't be able to withdraw more money then exist in account", async () => {
     const user = await createUserUseCase.execute({
       name: "Tony Stark",
       email: "tony@stark.com",

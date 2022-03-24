@@ -28,7 +28,7 @@ describe("Get Statement Operation", () => {
     );
   });
 
-  it("Should be able to get an Statement Operation", async () => {
+  it("Should be able to do an Statement Operation", async () => {
     const user = await createUserUseCase.execute({
       name: "Tony Stark",
       email: "tony@stark.com",
@@ -51,7 +51,7 @@ describe("Get Statement Operation", () => {
     expect(statementOperation).toHaveProperty("user_id");
   });
 
-  it("Shouldn't be able to get an statement to an unknown user", async () => {
+  it("Shouldn't be able to do an Statement operation to an unknown", async () => {
     expect( async () => {
       await getStatementOperationUseCase.execute({
         user_id: "unknown user",

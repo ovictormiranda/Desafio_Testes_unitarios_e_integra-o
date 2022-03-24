@@ -36,7 +36,7 @@ describe("Get a balance", () => {
     expect(balance).toHaveProperty("statement");
   });
 
-  it("Shouldn't be able to get an unknown user", async () =>{
+  it("Shouldn't be able to get balance to an unknown user", async () =>{
     expect(async () => {
       await getBalanceUseCase.execute({
         user_id: "user unknown"
