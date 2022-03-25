@@ -10,7 +10,7 @@ export default async (host = "localhost"): Promise<Connection> => {
       host: process.env.NODE_ENV === "test" ? "localhost" : host,
       database:
         process.env.NODE_ENV === "test"
-          ? "fin_api_test"
+          ? "fin_api"
           : defaultOptions.database,
     })
   );
